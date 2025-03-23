@@ -2,7 +2,7 @@
 
 **A musical chord identification system that determines chord names from three input notes**
 
-## 🎹 Features
+## Features
 
 - **Chord Recognition**  
   Identifies major (`maj`), minor (`min`), augmented (`aug`), and diminished (`dim`) chords
@@ -15,7 +15,7 @@
   Ensures valid notes (A-G with ♯/♭) and exactly 3 notes
 
 
-## 📥 Installation
+##  Installation
 ```bash
 git clone https://github.com/aabb2002/ChordFinder.git
 cd ChordFinder
