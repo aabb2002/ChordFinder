@@ -1,6 +1,10 @@
 package group4.hw3.chordfinder.group4_HW3_ChordFinder;
 import java.util.*;
 
+
+/**
+ * Represents a musical note with a name and a corresponding semitone value.
+ */
 class Note {
 	private String name;
 	private int value;
@@ -26,6 +30,12 @@ class Note {
 		NOTE_VALUES.put("Ab", 11);
 	}
 
+	/**
+     * Constructs a Note object with the given name.
+     *
+     * @param name the name of the note (e.g., "C", "A#", "Bb").
+     * @throws IllegalArgumentException if the note name is invalid.
+     */
 	public Note(String name) {
 		if (!NOTE_VALUES.containsKey(name)) {
 			throw new IllegalArgumentException("Invalid note name: " + name);
@@ -34,10 +44,20 @@ class Note {
 		this.value = NOTE_VALUES.get(name);
 	}
 
+	/**
+     * Returns the semitone value of the note.
+     *
+     * @return the semitone value (0-11).
+     */
 	public int getValue() {
 		return value;
 	}
 
+	/**
+     * Returns the name of the note.
+     *
+     * @return the name of the note.
+     */
 	public String getName() {
 		return name;
 	}

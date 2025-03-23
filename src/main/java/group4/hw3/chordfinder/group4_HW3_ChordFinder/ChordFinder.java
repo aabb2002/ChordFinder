@@ -10,6 +10,10 @@ package group4.hw3.chordfinder.group4_HW3_ChordFinder;
 
 import java.util.*;
 
+
+/**
+ * A class that identifies the name of a chord based on three input notes.
+ */
 public class ChordFinder{
 	private static final List<Chord> CHORDS = Arrays.asList(
 	        new Chord("maj", Arrays.asList(new Interval(0), new Interval(4), new Interval(7))),
@@ -18,6 +22,14 @@ public class ChordFinder{
 	        new Chord("aug", Arrays.asList(new Interval(0), new Interval(4), new Interval(8)))
 	    );
 
+	/**
+     * Returns a set of chord names that the given notes can represent.
+     *
+     * @param notes three notes of the chord, separated by a space.
+     * @return a set of chord names if recognized, or an empty set if no chords are recognized.
+     * @throws IllegalArgumentException if the input does not contain exactly 3 notes,
+     * if duplicate notes are provided, or if an invalid note name is provided.
+     */
 	    public static Set<String> getChordName(String... notes) {
 	        if (notes.length != 3) {
 	            throw new IllegalArgumentException("Input must contain exactly 3 notes.");
@@ -60,6 +72,12 @@ public class ChordFinder{
 	        return recognizedChords;
 }
 
+/**
+ * The main method for interacting with the ChordFinder class.
+* Prompts the user to input three notes and displays the recognized chord names.
+ *
+ * @param args command-line arguments (not used).
+ */
 public static void main(String[] args) {
 	Scanner scanner = new Scanner(System.in);
     while (true) {
