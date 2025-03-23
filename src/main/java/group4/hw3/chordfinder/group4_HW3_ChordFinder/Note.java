@@ -1,0 +1,58 @@
+package group4.hw3.chordfinder.group4_HW3_ChordFinder;
+import java.util.*;
+
+class Note {
+	private String name;
+	private int value;
+
+	private static final Map<String, Integer> NOTE_VALUES = new HashMap<>();
+	static {
+		NOTE_VALUES.put("A", 0);
+		NOTE_VALUES.put("A#", 1);
+		NOTE_VALUES.put("Bb", 1);
+		NOTE_VALUES.put("B", 2);
+		NOTE_VALUES.put("C", 3);
+		NOTE_VALUES.put("C#", 4);
+		NOTE_VALUES.put("Db", 4);
+		NOTE_VALUES.put("D", 5);
+		NOTE_VALUES.put("D#", 6);
+		NOTE_VALUES.put("Eb", 6);
+		NOTE_VALUES.put("E", 7);
+		NOTE_VALUES.put("F", 8);
+		NOTE_VALUES.put("F#", 9);
+		NOTE_VALUES.put("Gb", 9);
+		NOTE_VALUES.put("G", 10);
+		NOTE_VALUES.put("G#", 11);
+		NOTE_VALUES.put("Ab", 11);
+	}
+
+	public Note(String name) {
+		if (!NOTE_VALUES.containsKey(name)) {
+			throw new IllegalArgumentException("Invalid note name: " + name);
+		}
+		this.name = name;
+		this.value = NOTE_VALUES.get(name);
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Note note = (Note) o;
+		return value == note.value;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(value);
+	}
+
+}
