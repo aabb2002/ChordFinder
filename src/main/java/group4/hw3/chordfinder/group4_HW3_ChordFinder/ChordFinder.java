@@ -1,4 +1,12 @@
+
+/** group members 
+ * 1.Andrew 
+ * 2.Lawrence
+ * 3.Nur
+ */
+
 package group4.hw3.chordfinder.group4_HW3_ChordFinder;
+
 
 import java.util.*;
 
